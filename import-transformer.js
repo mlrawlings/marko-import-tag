@@ -4,9 +4,9 @@ module.exports = function(el, context) {
     var assignments = importToAssignments(statement);
     assignments.forEach(assignment => {
         if(typeof assignment === 'string') {
-            context.addStaticCode(builder.require(builder.literal(assignment)));
+            context.addStaticCode(builder.require(assignment));
         } else if(typeof assignment.value === 'string') {
-            context._staticVars[assignment.name] = builder.require(builder.literal(assignment.name));
+            context._staticVars[assignment.name] = builder.require(assignment.value);
         } else {
             context._staticVars[assignment.name] = builder.memberExpression(assignment.value.object, assignment.value.property);
         }

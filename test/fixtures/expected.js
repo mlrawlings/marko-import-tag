@@ -1,8 +1,8 @@
 function create(__helpers) {
   var marko = require("marko"),
-      $ = require("$"),
+      $ = require("jquery"),
       fn = $.fn,
-      utils = require("utils"),
+      utils = require("./utils"),
       x = utils.x,
       y = utils.y,
       z = utils.z,
@@ -11,7 +11,7 @@ function create(__helpers) {
       notEmpty = __helpers.ne,
       escapeXml = __helpers.x;
 
-  require("'foo'");
+  require("foo");
 
   return function render(data, out) {
       };
